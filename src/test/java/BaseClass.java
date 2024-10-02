@@ -65,6 +65,11 @@ public class BaseClass {
 		.when().get("maps/api/place/get/json")
 		.then().log().all().assertThat().statusCode(200)
 		.extract().response().asString();
+		
+//		String ResponseValidation2=given().log().all().queryParam("key", "qaclick123").queryParam("place_id", Place_id )
+//				.when().get("maps/api/place/get/json")
+//				.then().log().all().assertThat().statusCode(200)
+//				.extract().response().asString(); --> Used For Git
 	
 		JsonPath js1=JSONMethods.JSON(ResponseValidation);
 		String Actualaddress=js1.getString("address");
